@@ -1,0 +1,62 @@
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  src: url('../font/IRANSansWeb.woff') format('woff');
+  /* All Major Browsers */
+}
+
+@font-face {
+  font-family: faNum;
+  font-style: normal;
+  src: url('../font/IRANSansWebFaNum.ttf');
+}
+
+body {
+  font-family: 'IRANSans';
+}
+
+/* .result {
+  font-size: 1.2rem;
+} */
+
+text {
+  font-family: 'faNum';
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+
+::placeholder {
+  font-size: 0.8rem;
+}
+
+.form-select {
+  font-size: 0.8rem;
+  font-family: 'faNum';
+}
+
+.form-control {
+  font-family: 'faNum';
+}
+
+.result {
+  font-family: 'faNum';
+}
+
+.pr-result {
+  padding: 20px 20px 2px 20px;
+}
+
+.pr-result h1 {
+  font-family: 'faNum';
+  font-size: 4.5rem;
+  text-shadow: 0px 0px 5px #FFC107;
+}
+
+.desc h5 {
+  text-shadow: 0px 0px 5px #ccc;
+}
+
+.desc span {
+  font-size: 1rem;
+  padding: 0 10px;
+}
