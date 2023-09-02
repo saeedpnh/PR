@@ -4,6 +4,8 @@ import HookForm from "./components/HookForm";
 import Formula from "./components/Formula";
 import Gauge from "./components/Gauge";
 import Pr from "./components/Pr";
+import RentToMortgage from "./components/RentToMortgage";
+import MortgageToRent from "./components/MortgageToRent";
 
 function App() {
   return (
@@ -26,8 +28,23 @@ function App() {
       </section>
 
       <div className="container">
-        <div className="mt-5" dir="rtl">
-          <Formula />
+        <div className="row">
+          <div className="mt-5" dir="rtl">
+            <Formula />
+          </div>
+        </div>
+      </div>
+
+      <div className="convertor py-5">
+        <div className="container mt-2">
+          <div className="row justify-content-around" dir="rtl">
+            <div className="col-md-4">
+              <RentToMortgage />
+            </div>
+            <div className="col-md-4">
+              <MortgageToRent />
+            </div>
+          </div>
         </div>
       </div>
     </>

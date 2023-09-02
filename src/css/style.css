@@ -60,3 +60,8 @@ text {
   font-size: 1rem;
   padding: 0 10px;
 }
+
+.convertor {
+  background-color: #21abcd;
+  font-family: 'faNum';
+}
