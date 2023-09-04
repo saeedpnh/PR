@@ -65,3 +65,9 @@ text {
   background-color: #21abcd;
   font-family: 'faNum';
 }
+
+.thousand-separator {
+  font-family: 'faNum';
+  font-size: 0.9rem;
+  padding-bottom: 0.5rem;
+}

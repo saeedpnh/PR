@@ -2,16 +2,17 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import formatThousands from "format-thousands";
 import ApartmentContext from "../context/data";
 
 function HookForm() {
   const [show, setShow] = useState(false);
-  const { createData, showAndHide } = useContext(ApartmentContext);
+  const { createData } = useContext(ApartmentContext);
 
   const schema = yup
     .object({
       mortgage: yup.number().positive(),
-      rent: yup.number().positive().integer().required("it is required"),
+      rent: yup.number().integer().required("it is required"),
       region: yup.number().positive().integer(),
       meter: yup.number().positive().integer(),
       meterPrice: yup.number().positive().integer(),
@@ -34,34 +35,32 @@ function HookForm() {
     e.target.reset();
   };
 
+  const watch_mortgage = watch("mortgage");
+  let convert_mortgage = parseFloat(watch_mortgage);
+
+  const watch_rent = watch("rent");
+  let convert_rent = parseFloat(watch_rent);
+
+  const watch_meter = watch("meter");
+  let convert_meter = parseFloat(watch_meter);
+
+  const watch_meterPrice = watch("meterPrice");
+  let convert_meterPrice = parseFloat(watch_meterPrice);
+
+  if (watch("mortgage")) {
+    console.log("fuck");
+  }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <select className="form-select mb-2" {...register("region")}>
-        <option defaultValue="">منطقه شهری را انتخاب کنید</option>
-        <option value="1">منطقه 1</option>
-        <option value="2">منطقه 2</option>
-        <option value="3">منطقه 3</option>
-        <option value="4">منطقه 4</option>
-        <option value="5">منطقه 5</option>
-        <option value="6">منطقه 6</option>
-        <option value="7">منطقه 7</option>
-        <option value="8">منطقه 8</option>
-        <option value="9">منطقه 9</option>
-        <option value="10">منطقه 10</option>
-        <option value="11">منطقه 11</option>
-        <option value="12">منطقه 12</option>
-        <option value="13">منطقه 13</option>
-        <option value="14">منطقه 14</option>
-        <option value="15">منطقه 15</option>
-        <option value="16">منطقه 16</option>
-        <option value="17">منطقه 17</option>
-        <option value="18">منطقه 18</option>
-        <option value="19">منطقه 19</option>
-        <option value="20">منطقه 20</option>
-        <option value="21">منطقه 21</option>
-        <option value="22">منطقه 22</option>
+        <option defaultValue="">انتخاب محدوده</option>
+        <option value="1">مناطق شمالی - بالای همت</option>
+        <option value="2">
+          مناطق مرکزی - بالاتر از انقلاب پایین تر از همت
+        </option>
+        <option value="3">مناطق جنوبی</option>
       </select>
-
       <input
         className="form-control mb-2"
         placeholder="مبلغ رهن"
@@ -71,24 +70,61 @@ function HookForm() {
         })}
         // style={{ borderColor: errors["rent"] ? "#dc3545" : null }}
       />
+      {(() => {
+        if (watch("mortgage")) {
+          return (
+            <p className="thousand-separator text-success text-center">
+              {formatThousands(convert_mortgage, ",")} تومان
+            </p>
+          );
+        }
+      })()}
+
       <input
         className="form-control mb-2"
         placeholder="مبلغ اجاره"
         type="text"
         {...register("rent")}
       />
+      {(() => {
+        if (watch("rent")) {
+          return (
+            <p className="thousand-separator text-success text-center">
+              {formatThousands(convert_rent, ",")} تومان
+            </p>
+          );
+        }
+      })()}
       <input
         className="form-control mb-2"
         placeholder="متراژ آپارتمان"
         type="text"
         {...register("meter")}
       />
+      {(() => {
+        if (watch("meter")) {
+          return (
+            <p className="thousand-separator text-success text-center">
+              {formatThousands(convert_meter, ",")} متر
+            </p>
+          );
+        }
+      })()}
       <input
         className="form-control mb-2"
         placeholder="قیمت هر متر آپارتمان"
         type="text"
         {...register("meterPrice")}
       />
+      {(() => {
+        if (watch("meterPrice")) {
+          return (
+            <p className="thousand-separator text-success text-center">
+              {formatThousands(convert_meterPrice, ",")} تومان
+            </p>
+          );
+        }
+      })()}
       <div className="d-grid">
         <input className="btn btn-sm btn-info" type="submit" value="ثبت" />
       </div>

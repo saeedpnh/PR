@@ -11,6 +11,7 @@ function Provider({ children }) {
     setInfo(data);
   };
 
+  const region = info.region;
   const toMortgage = Math.round(parseFloat(info.rent * 33.3));
   const mortgageToRent = Math.round(parseFloat(info.mortgage / 100) * 3.3);
   const fullMortgage = Math.round(
@@ -62,6 +63,7 @@ function Provider({ children }) {
     p_toMortgage,
     p_fullRentInEachMonth,
     p_rentForEachMeter,
+    region,
   };
 
   return (
