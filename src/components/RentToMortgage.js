@@ -22,7 +22,7 @@ function RentToMortgage() {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    setValue(data.rentToMortgage * 50);
+    setValue(Math.round(data.rentToMortgage * 33.3));
   };
 
   const observe = watch("rentToMortgage");

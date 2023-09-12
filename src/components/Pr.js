@@ -19,39 +19,60 @@ function Pr() {
           {(() => {
             if (region == 3 && pr > 25) {
               return (
-                <div className="pt-3 text-danger">قیمت اجاره عادلانه است</div>
+                <div>
+                  <p className="pt-3 text-success">قیمت اجاره عادلانه است</p>
+                  <p>مناطق جنوبی نسبت در مناطق جنوبی 20 تا 25</p>
+                </div>
               );
             }
             if (region == 2 && pr > 30) {
               return (
-                <div className="pt-3 text-danger">قیمت اجاره عادلانه است</div>
+                <div>
+                  <p className="pt-3 text-success">قیمت اجاره عادلانه است</p>
+                  <p>مناطق میانی- بالاتر از انقلاب پایین تر از همت</p>
+                </div>
               );
             }
             if (region == 2 && pr < 30 && pr > 25) {
               return (
-                <div className="pt-3 text-danger">قیمت اجاره قابل توجه است</div>
+                <div>
+                  <p className="pt-3 text-danger">قیمت اجاره قابل توجه است</p>
+                  <p>مناطق میانی- بالاتر از انقلاب پایین تر از همت</p>
+                </div>
               );
             }
             if (region == 2 && pr < 25) {
               return (
-                <div className="pt-3 text-danger">قیمت اجاره خیلی زیاد است</div>
+                <div>
+                  <p className="pt-3 text-danger">قیمت اجاره خیلی زیاد است</p>
+                  <p>مناطق میانی- بالاتر از انقلاب پایین تر از همت</p>
+                </div>
               );
             }
             if (region == 1 && pr == 30) {
               return (
-                <div className="pt-3 text-danger">قیمت اجاره عادلانه است</div>
+                <div>
+                  <p className="pt-3 text-success">قیمت اجاره عادلانه است</p>
+                  <p>مناطق شمالی- بالای همت نسبت در مناطق شمالی 30 تا 35</p>
+                </div>
               );
             }
             if (region == 1 && pr > 30 && pr < 35) {
               return (
-                <div className="pt-3 text-danger">
-                  قیمت اجاره تقریبا عادلانه است
+                <div>
+                  <p className="pt-3 text-primary">
+                    قیمت اجاره تقریبا عادلانه است
+                  </p>
+                  <p>مناطق شمالی- بالای همت نسبت در مناطق شمالی 30 تا 35</p>
                 </div>
               );
             }
             if (region == 1 && pr < 30) {
               return (
-                <div className="pt-3 text-danger">قیمت اجاره عادلانه نیست</div>
+                <div>
+                  <p className="pt-3 text-danger">قیمت اجاره عادلانه نیست</p>
+                  <p>مناطق شمالی- بالای همت نسبت در مناطق شمالی 30 تا 35</p>
+                </div>
               );
             }
           })()}

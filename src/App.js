@@ -11,9 +11,18 @@ function App() {
   return (
     <>
       <section className="container">
-        <p className="text-center h4 text-black-50 my-4" dir="rtl">
-          می خوای بدونی آپارتمانت رو به قیمت منصفانه اجاره دادی یا اجاره کردی!
-        </p>
+        <div className="row">
+          <div className="col-md-8 mx-auto">
+            <p
+              className="text-center h4 rounded mt-4 text-bg-info py-3"
+              dir="rtl"
+              style={{ textShadow: "1px 0 3px #fff" }}
+            >
+              می خوای بدونی آپارتمانت رو به قیمت منصفانه اجاره دادی یا اجاره
+              کردی!
+            </p>
+          </div>
+        </div>
         <div className="row d-flex justify-content-center" dir="rtl">
           <div className="col-md-3 bg-light p-3 rounded d-flex justify-content-center align-items-center">
             <HookForm />
