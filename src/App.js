@@ -29,7 +29,6 @@ function App() {
           </div>
           <div className="col-md-4 bg-light rounded d-flex justify-content-center align-items-center">
             <div>
-              {/* <Gauge /> */}
               <Pr />
             </div>
           </div>
