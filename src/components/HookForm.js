@@ -6,7 +6,6 @@ import formatThousands from "format-thousands";
 import ApartmentContext from "../context/data";
 
 function HookForm() {
-  const [show, setShow] = useState(false);
   const { createData } = useContext(ApartmentContext);
 
   const schema = yup
@@ -75,7 +74,7 @@ function HookForm() {
                 className="text-success text-center region-text d-flex align-items-center"
                 style={{ marginRight: "0.5rem" }}
               >
-                نسبت در مناطق میانی 25 تا 30
+                نسبت در مناطق مرکزی 25 تا 30
               </p>
             );
           }
