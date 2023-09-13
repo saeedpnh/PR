@@ -47,86 +47,139 @@ function HookForm() {
   const watch_meterPrice = watch("meterPrice");
   let convert_meterPrice = parseFloat(watch_meterPrice);
 
-  if (watch("mortgage")) {
-    console.log("fuck");
-  }
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <select className="form-select mb-2" {...register("region")}>
-        <option defaultValue="">انتخاب محدوده</option>
-        <option value="1">مناطق شمالی - بالای همت</option>
-        <option value="2">
-          مناطق مرکزی - بالاتر از انقلاب پایین تر از همت
-        </option>
-        <option value="3">مناطق جنوبی</option>
-      </select>
-      <input
-        className="form-control mb-2"
-        placeholder="مبلغ رهن"
-        type="text"
-        {...register("mortgage", {
-          // onChange: (e) => console.log(e.target.value),
-        })}
-        // style={{ borderColor: errors["rent"] ? "#dc3545" : null }}
-      />
-      {(() => {
-        if (watch("mortgage")) {
-          return (
-            <p className="thousand-separator text-success text-center">
-              {formatThousands(convert_mortgage, ",")} تومان
-            </p>
-          );
-        }
-      })()}
+      <div className="d-flex">
+        <select className="form-select w-50 mb-1" {...register("region")}>
+          <option defaultValue="">انتخاب محدوده</option>
+          <option value="1">مناطق شمالی - بالای همت</option>
+          <option value="2">
+            مناطق مرکزی - بالاتر از انقلاب پایین تر از همت
+          </option>
+          <option value="3">مناطق جنوبی</option>
+        </select>
+        {(() => {
+          if (watch("region") == 1) {
+            return (
+              <p
+                className="text-success text-center region-text d-flex align-items-center"
+                style={{ marginRight: "0.5rem" }}
+              >
+                نسبت در مناطق شمالی 30 تا 35
+              </p>
+            );
+          }
+          if (watch("region") == 2) {
+            return (
+              <p
+                className="text-success text-center region-text d-flex align-items-center"
+                style={{ marginRight: "0.5rem" }}
+              >
+                نسبت در مناطق میانی 25 تا 30
+              </p>
+            );
+          }
+          if (watch("region") == 3) {
+            return (
+              <p
+                className="text-success text-center region-text d-flex align-items-center"
+                style={{ marginRight: "0.5rem" }}
+              >
+                نسبت در مناطق جنوبی 20 تا 25
+              </p>
+            );
+          }
+        })()}
+      </div>
 
-      <input
-        className="form-control mb-2"
-        placeholder="مبلغ اجاره"
-        type="text"
-        {...register("rent")}
-      />
-      {(() => {
-        if (watch("rent")) {
-          return (
-            <p className="thousand-separator text-success text-center">
-              {formatThousands(convert_rent, ",")} تومان
-            </p>
-          );
-        }
-      })()}
-      <input
-        className="form-control mb-2"
-        placeholder="متراژ آپارتمان"
-        type="text"
-        {...register("meter")}
-      />
-      {(() => {
-        if (watch("meter")) {
-          return (
-            <p className="thousand-separator text-success text-center">
-              {formatThousands(convert_meter, ",")} متر
-            </p>
-          );
-        }
-      })()}
-      <input
-        className="form-control mb-2"
-        placeholder="قیمت هر متر آپارتمان"
-        type="text"
-        {...register("meterPrice")}
-      />
-      {(() => {
-        if (watch("meterPrice")) {
-          return (
-            <p className="thousand-separator text-success text-center">
-              {formatThousands(convert_meterPrice, ",")} تومان
-            </p>
-          );
-        }
-      })()}
+      <div className="d-flex mb-1">
+        <input
+          className="form-control w-50"
+          placeholder="مبلغ رهن"
+          type="text"
+          {...register("mortgage", {
+            // onChange: (e) => console.log(e.target.value),
+          })}
+          // style={{ borderColor: errors["rent"] ? "#dc3545" : null }}
+        />
+        {(() => {
+          if (watch("mortgage")) {
+            return (
+              <p
+                className="thousand-separator text-success text-center d-flex align-items-center"
+                style={{ marginRight: "0.5rem" }}
+              >
+                {formatThousands(convert_mortgage, ",")} تومان پیش
+              </p>
+            );
+          }
+        })()}
+      </div>
+
+      <div className="d-flex mb-1">
+        <input
+          className="form-control w-50"
+          placeholder="مبلغ اجاره"
+          type="text"
+          {...register("rent")}
+        />
+        {(() => {
+          if (watch("rent")) {
+            return (
+              <p
+                className="thousand-separator text-success text-center d-flex align-items-center"
+                style={{ marginRight: "0.5rem" }}
+              >
+                {formatThousands(convert_rent, ",")} تومان اجاره
+              </p>
+            );
+          }
+        })()}
+      </div>
+
+      <div className="d-flex mb-1">
+        <input
+          className="form-control w-50"
+          placeholder="متراژ آپارتمان"
+          type="text"
+          {...register("meter")}
+        />
+        {(() => {
+          if (watch("meter")) {
+            return (
+              <p
+                className="thousand-separator text-success text-center d-flex align-items-center"
+                style={{ marginRight: "0.5rem" }}
+              >
+                {formatThousands(convert_meter, ",")} متر
+              </p>
+            );
+          }
+        })()}
+      </div>
+
+      <div className="d-flex mb-1">
+        <input
+          className="form-control w-50"
+          placeholder="قیمت هر متر آپارتمان"
+          type="text"
+          {...register("meterPrice")}
+        />
+        {(() => {
+          if (watch("meterPrice")) {
+            return (
+              <p
+                className="thousand-separator text-success text-center d-flex align-items-center"
+                style={{ marginRight: "0.5rem" }}
+              >
+                {formatThousands(convert_meterPrice, ",")} تومان
+              </p>
+            );
+          }
+        })()}
+      </div>
       <div className="d-grid">
-        <input className="btn btn-sm btn-info" type="submit" value="ثبت" />
+        <input className="btn btn-sm btn-info w-50" type="submit" value="ثبت" />
       </div>
     </form>
   );

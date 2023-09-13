@@ -24,10 +24,10 @@ function App() {
           </div>
         </div>
         <div className="row d-flex justify-content-center" dir="rtl">
-          <div className="col-md-3 bg-light p-3 rounded d-flex justify-content-center align-items-center">
+          <div className="col-md-4 bg-light p-3 rounded d-flex justify-content-center align-items-center">
             <HookForm />
           </div>
-          <div className="col-md-5 bg-light rounded d-flex justify-content-center align-items-center">
+          <div className="col-md-4 bg-light rounded d-flex justify-content-center align-items-center">
             <div>
               {/* <Gauge /> */}
               <Pr />
@@ -37,8 +37,8 @@ function App() {
       </section>
 
       <div className="container">
-        <div className="row">
-          <div className="mt-5" dir="rtl">
+        <div className="row justify-content-center">
+          <div className="col-md-10 mt-5" dir="rtl">
             <Formula />
           </div>
         </div>
