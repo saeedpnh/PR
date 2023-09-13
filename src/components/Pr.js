@@ -23,33 +23,40 @@ function Pr() {
             </div>
           </div>
           {(() => {
-            if (region == 3 && pr >= 31) {
-              <div>
-                <p className="pt-3 text-success">
-                  قیمت اجاره تا حد زیادی عادلانه
-                </p>
-                <Fair />
-              </div>;
+            if (region == 1 && pr >= 35) {
+              return (
+                <div>
+                  <p className="pt-3 text-success">
+                    قیمت اجاره تا حد زیادی عادلانه است
+                  </p>
+                  <Fair />
+                </div>
+              );
             }
-            if (region == 3 && pr >= 31 && pr <= 35) {
-              <div>
-                <p className="pt-3 text-success">قیمت اجاره عادلانه است</p>
-                <Fair />
-              </div>;
+            if (region == 1 && pr >= 30 && pr <= 40) {
+              return (
+                <div>
+                  <p className="pt-3 text-success">قیمت اجاره عادلانه است</p>
+                  <Fair />
+                </div>
+              );
             }
-            if (region == 3 && pr >= 25 && pr <= 30) {
-              <div>
-                <p className="pt-3 text-danger">قیمت اجاره قابل توجه است</p>
-                <LessExpensive />
-              </div>;
+            if (region == 1 && pr >= 25 && pr <= 29) {
+              return (
+                <div>
+                  <p className="pt-3 text-danger">قیمت اجاره قابل توجه است</p>
+                  <LessExpensive />
+                </div>
+              );
             }
-            if (region == 3 && pr <= 20) {
-              <div>
-                <p className="pt-3 text-danger">قیمت اجاره خیلی زیاد است</p>
-                <Expensive />
-              </div>;
+            if (region == 1 && pr <= 25) {
+              return (
+                <div>
+                  <p className="pt-3 text-danger">قیمت اجاره خیلی زیاد است</p>
+                  <Expensive />
+                </div>
+              );
             }
-
             if (region == 2 && pr >= 36) {
               return (
                 <div>
@@ -85,17 +92,17 @@ function Pr() {
               );
             }
 
-            if (region == 1 && pr >= 35) {
+            if (region == 3 && pr >= 31) {
               return (
                 <div>
                   <p className="pt-3 text-success">
-                    قیمت اجاره تا حد زیادی عادلانه است
+                    قیمت اجاره تا حد زیادی عادلانه
                   </p>
                   <Fair />
                 </div>
               );
             }
-            if (region == 1 && pr >= 30 && pr <= 40) {
+            if (region == 3 && pr >= 31 && pr <= 35) {
               return (
                 <div>
                   <p className="pt-3 text-success">قیمت اجاره عادلانه است</p>
@@ -103,7 +110,7 @@ function Pr() {
                 </div>
               );
             }
-            if (region == 1 && pr >= 25 && pr <= 29) {
+            if (region == 3 && pr >= 20 && pr <= 25) {
               return (
                 <div>
                   <p className="pt-3 text-danger">قیمت اجاره قابل توجه است</p>
@@ -111,7 +118,8 @@ function Pr() {
                 </div>
               );
             }
-            if (region == 1 && pr <= 25) {
+
+            if (region == 3 && pr <= 20) {
               return (
                 <div>
                   <p className="pt-3 text-danger">قیمت اجاره خیلی زیاد است</p>
