@@ -102,7 +102,7 @@ function Pr() {
                 </div>
               );
             }
-            if (region == 3 && pr >= 31 && pr <= 35) {
+            if (region == 3 && pr >= 26 && pr <= 30) {
               return (
                 <div>
                   <p className="pt-3 text-success">قیمت اجاره عادلانه است</p>

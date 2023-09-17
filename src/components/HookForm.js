@@ -57,7 +57,7 @@ function HookForm() {
           </option>
           <option value="3">مناطق جنوبی</option>
         </select>
-        {(() => {
+        {/* {(() => {
           if (watch("region") == 1) {
             return (
               <p
@@ -88,7 +88,7 @@ function HookForm() {
               </p>
             );
           }
-        })()}
+        })()} */}
       </div>
 
       <div className="d-flex mb-1">
