@@ -29,7 +29,7 @@ function Formula() {
         <div className="row justify-content-between">
           <div className="col-md-3 col-6">
             <p>مبلغ رهن</p>
-            <p className="text-bg-light p-1 rounded text-center text-muted result">
+            <p className="text-bg-secondary p-1 rounded text-center text-muted result">
               {formatThousands(mortgage, ",")}
             </p>
             <p className="text-secondary">
@@ -68,7 +68,7 @@ function Formula() {
         <div className="row justify-content-between mt-1" dir="rtl">
           <div className="col-md-3 col-6">
             <p>مبلغ اجاره هر ماه</p>
-            <p className="text-bg-light p-1 rounded text-center text-muted result">
+            <p className="text-bg-secondary p-1 rounded text-center text-muted result">
               {formatThousands(rentPrice, ",")}
             </p>
             <p className="text-secondary">
