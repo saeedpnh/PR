@@ -29,7 +29,7 @@ function Formula() {
         <div className="row justify-content-between">
           <div className="col-md-3 col-6">
             <p>مبلغ رهن</p>
-            <p className="text-bg-warning p-1 rounded text-center result">
+            <p className="text-bg-light p-1 rounded text-center text-muted result">
               {formatThousands(mortgage, ",")}
             </p>
             <p className="text-secondary">
@@ -38,7 +38,7 @@ function Formula() {
           </div>
           <div className="col-md-3 col-6">
             <p>تبدیل رهن فعلی به اجاره</p>
-            <p className="text-bg-warning p-1 rounded text-center result">
+            <p className="text-bg-success p-1 rounded text-center result">
               {formatThousands(mortgageToRent, ",")}
             </p>
             <p className="text-secondary">
@@ -47,7 +47,7 @@ function Formula() {
           </div>
           <div className="col-md-3 col-6">
             <p>رهن کامل</p>
-            <p className="text-bg-warning p-1 rounded text-center result">
+            <p className="text-bg-success p-1 rounded text-center result">
               {formatThousands(fullMortgage, ",")}
             </p>
             <p className="text-secondary">
@@ -56,7 +56,7 @@ function Formula() {
           </div>
           <div className="col-md-3 col-6">
             <p>رهن به ازاء هر متر مربع</p>
-            <p className="text-bg-warning p-1 rounded text-center result">
+            <p className="text-bg-success p-1 rounded text-center result">
               {formatThousands(mortgageForEachMeter, ",")}
             </p>
             <p className="text-secondary">
@@ -68,7 +68,7 @@ function Formula() {
         <div className="row justify-content-between mt-1" dir="rtl">
           <div className="col-md-3 col-6">
             <p>مبلغ اجاره هر ماه</p>
-            <p className="text-bg-warning p-1 rounded text-center result">
+            <p className="text-bg-light p-1 rounded text-center text-muted result">
               {formatThousands(rentPrice, ",")}
             </p>
             <p className="text-secondary">
@@ -77,7 +77,7 @@ function Formula() {
           </div>
           <div className="col-md-3 col-6">
             <p>تبدیل اجاره فعلی به رهن</p>
-            <p className="text-bg-warning p-1 rounded text-center result">
+            <p className="text-bg-secondary p-1 rounded text-center result">
               {formatThousands(toMortgage, ",")}
             </p>
             <p className="text-secondary">
@@ -86,7 +86,7 @@ function Formula() {
           </div>
           <div className="col-md-3 col-6">
             <p>اجاره کامل در هر ماه</p>
-            <p className="text-bg-warning p-1 rounded text-center result">
+            <p className="text-bg-secondary p-1 rounded text-center result">
               {formatThousands(fullRentInEachMonth, ",")}
             </p>
             <p className="text-secondary">
@@ -95,7 +95,7 @@ function Formula() {
           </div>
           <div className="col-md-3 col-6">
             <p>اجاره به ازاء هر متر مربع</p>
-            <p className="text-bg-warning p-1 rounded text-center result">
+            <p className="text-bg-secondary p-1 rounded text-center result">
               {formatThousands(rentForEachMeter, ",")}
             </p>
             <p className="text-secondary">
