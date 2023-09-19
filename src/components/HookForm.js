@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -31,7 +31,7 @@ function HookForm() {
   const onSubmit = (data, e) => {
     e.preventDefault();
     createData(data);
-    e.target.reset();
+    // e.target.reset();
   };
 
   const watch_mortgage = watch("mortgage");
@@ -57,14 +57,14 @@ function HookForm() {
           </option>
           <option value="3">مناطق جنوبی</option>
         </select>
-        {/* {(() => {
+        {(() => {
           if (watch("region") == 1) {
             return (
               <p
                 className="text-success text-center region-text d-flex align-items-center"
                 style={{ marginRight: "0.5rem" }}
               >
-                نسبت در مناطق شمالی 30 تا 35
+                مناطق شمالی - بالای همت
               </p>
             );
           }
@@ -74,7 +74,7 @@ function HookForm() {
                 className="text-success text-center region-text d-flex align-items-center"
                 style={{ marginRight: "0.5rem" }}
               >
-                نسبت در مناطق مرکزی 25 تا 30
+                مناطق مرکزی
               </p>
             );
           }
@@ -84,11 +84,11 @@ function HookForm() {
                 className="text-success text-center region-text d-flex align-items-center"
                 style={{ marginRight: "0.5rem" }}
               >
-                نسبت در مناطق جنوبی 20 تا 25
+                مناطق جنوبی
               </p>
             );
           }
-        })()} */}
+        })()}
       </div>
 
       <div className="d-flex mb-1">

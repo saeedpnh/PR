@@ -22,7 +22,7 @@ function MortgageToRent() {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    setValue(data.MortgageToRent * 0.03);
+    setValue(data.MortgageToRent * 3.3);
   };
 
   const observe = watch("MortgageToRent");
@@ -58,7 +58,7 @@ function MortgageToRent() {
       {(() => {
         if (value != undefined) {
           return (
-            <div className="text-bg-warning p-1 rounded text-center result">
+            <div className="text-bg-warning p-1 rounded text-center w-50 result">
               {formatThousands(value, ",")}
             </div>
           );

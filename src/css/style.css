@@ -80,3 +80,7 @@ text {
   font-size: 0.8rem;
   margin-top: 1rem;
 }
+
+.modal-header .btn-close {
+  margin: 0;
+}
