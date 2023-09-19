@@ -129,7 +129,14 @@ function HookForm() {
                 className="thousand-separator text-success text-center d-flex align-items-center"
                 style={{ marginRight: "0.5rem" }}
               >
-                {formatThousands(convert_rent, ",")} تومان اجاره
+                {(() => {
+                  if (convert_rent == 0) {
+                    return "رهن کامل";
+                  } else {
+                    return formatThousands(convert_rent, ",") + " تومان اجاره";
+                  }
+                })()}
+                {/* {formatThousands(convert_rent, ",")} تومان اجاره */}
               </p>
             );
           }
